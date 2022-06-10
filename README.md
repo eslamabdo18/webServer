@@ -13,3 +13,11 @@ run ./deploy.sh
 then wait for the installtion 
 
 http://18.118.147.63:3000/
+
+
+if you want to start after deploymennt 
+sudo systemctl start webapp.service 
+
+if you want to stop it 
+sudo systemctl stop webapp.service 
+
