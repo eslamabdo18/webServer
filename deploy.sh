@@ -15,6 +15,6 @@ cd frontend
 docker build -f Dockerfile -t frontend .
 cd ..
 sudo chmod 777 /var/run/docker.sock
-docker-compose up --build
 
+sudo systemctl restart webapp.service 
 echo "Done"
