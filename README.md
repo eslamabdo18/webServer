@@ -9,7 +9,11 @@ ssh -i "webServerKey.pem" ubuntu@ec2-18-118-147-63.us-east-2.compute.amazonaws.c
 then clone the project again in the aws instance  
 
 before runnig the script 
+
+
 sudo vi /etc/systemd/system/webapp.service
+
+
 and put this script in this file 
 
 
