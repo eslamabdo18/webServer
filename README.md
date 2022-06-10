@@ -8,6 +8,26 @@ ssh -i "webServerKey.pem" ubuntu@ec2-18-118-147-63.us-east-2.compute.amazonaws.c
 
 then clone the project again in the aws instance  
 
+before runnig the script 
+sudo vi /etc/systemd/system/webapp.service
+and put this script in this file 
+    [Unit]
+    Description=Docker Compose WIKIJS Service
+    Requires=docker.service
+    After=docker.service network.target
+
+    [Service]
+    Type=oneshot
+    RemainAfterExit=yes
+    WorkingDirectory=/home/ubuntu/webServer
+    ExecStart=/usr/local/bin/docker-compose up -d --build
+    ExecStop=/usr/local/bin/docker-compose down
+    TimeoutStartSec=0
+
+    [Install]
+    WantedBy=multi-user.target
+
+
 run ./deploy.sh 
 
 then wait for the installtion 
