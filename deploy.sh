@@ -1,9 +1,8 @@
-sudo -i
-apt-get update 
-apt-get remove docker docker-engine docker.io containerd runc
-apt install docker.io
-systemctl start docker
-systemctl enable docker
+sudo apt-get update 
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
 echo "Done installing docker"
 cd backend 
 docker build -f Dockerfile -t backend .
