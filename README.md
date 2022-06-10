@@ -11,6 +11,8 @@ then clone the project again in the aws instance
 before runnig the script 
 sudo vi /etc/systemd/system/webapp.service
 and put this script in this file 
+
+
     [Unit]
     Description=Docker Compose WIKIJS Service
     Requires=docker.service
@@ -36,8 +38,10 @@ http://18.118.147.63:3000/
 
 
 if you want to start after deploymennt 
+
 sudo systemctl start webapp.service 
 
 if you want to stop it 
+
 sudo systemctl stop webapp.service 
 
